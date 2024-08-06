@@ -1,0 +1,24 @@
+.v-card {
+
+  z-index: 10 !important;
+  border-radius: 8px !important;
+  border-color: rgb(var(--v-theme-surface-300)) !important;
+  border-width: 1px !important;
+  background: rgb(var(--v-theme-surface-mixed-100)) !important;
+  color: rgb(var(--v-theme-surface-500)) !important;
+
+  &__shadow {
+    box-shadow: 0 5px 30px 2px rgb(var(--v-theme-surface-200)) !important;
+  }
+
+}
+
+.v-card-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.v-card-item__prepend {
+  padding-inline-end: 0;
+}
