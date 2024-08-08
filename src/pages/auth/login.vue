@@ -23,7 +23,6 @@ const submit = async () => {
         try {
             //~~ Llama a la acción de inicio de sesión del store
             await login(form.value.email, form.value.password);
-            console.log('Form Submitted', { ...form });
         } catch (error) {
             console.error('Login failed', error);
         }

@@ -7,6 +7,9 @@ export const password = (pass: string): boolean | string => {
   }
   return 'Format password invalid';
 }
+const isEmpty = (result) => {
+  return result === undefined || result === null || result === "";
+};
 
 export const email = (text: string): boolean | string => {
   const validate =

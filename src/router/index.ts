@@ -27,10 +27,8 @@ const router: Router = createRouter({
 // Define the navigation guard
 router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   const isRouteProtected = to.matched.some(record => (record.meta as { protected?: boolean }).protected);
-  const isToken = localStorage.getItem('token') || null;
+  const isToken = localStorage.getItem('at') || null;
   const routeName = to.name;
-
-  console.error(routeName, isRouteProtected, isToken);
 
   if (isRouteProtected) {
     if (!isToken) {

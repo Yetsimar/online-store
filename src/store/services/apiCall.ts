@@ -24,7 +24,7 @@ export const apiCall = async (configRequest: ApiCallConfig): Promise<AxiosRespon
             params: configRequest?.params,
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Authorization: `Bearer ${localStorage.getItem('at')}`,
             },
         };
         loading.value = true

@@ -20,7 +20,7 @@ export interface UserRegister {
 export const useAuthStore = defineStore('auth', () => {
     // State
     const user = ref<User | null>(null);
-    const token = ref<string | null>(localStorage.getItem('token'));
+    const token = ref<string | null>(localStorage.getItem('at'));
     const isAuthenticated = ref<boolean>(!!token.value);
     const loading = ref<boolean>(false);    
     const { push } = useRouter();
@@ -40,7 +40,7 @@ export const useAuthStore = defineStore('auth', () => {
             user.value = userData;
             token.value = userToken;
             isAuthenticated.value = true;
-            localStorage.setItem('token', userToken as string);
+            localStorage.setItem('at', userToken as string);
             push('/dashboard');
 
         } catch (err: any) {
@@ -62,7 +62,7 @@ export const useAuthStore = defineStore('auth', () => {
             user.value = null;
             token.value = null;
             isAuthenticated.value = false;
-            localStorage.removeItem('token');
+            localStorage.removeItem('at');
             push('/login');
         } catch (err: any) {
             console.error('Error during logout:', err);

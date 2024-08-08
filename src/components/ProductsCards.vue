@@ -41,7 +41,7 @@ const paginatedProducts = computed(() => {
                         label="Buscar productos" append-inner-icon="mdi-magnify" />
                 </VCol>
                 <VCol cols="12" md="6">
-                    <VSelect v-model="category_uuid" item-title="name" item-value="uuid"
+                    <VAutocomplete v-model="category_uuid" item-title="name" item-value="uuid"
                         @update:model-value="emits('update:filter', { name, category_uuid })" :items="categories"
                         label="Filtrar por categoría" clearable />
                 </VCol>

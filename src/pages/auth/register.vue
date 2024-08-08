@@ -24,7 +24,6 @@ const submit = async () => {
     if (registerForm.value?.validate()) {
         try {
             await register(form.value);
-            console.log('Form Submitted', { ...form });
         } catch (error) {
             console.error('Registration failed', error);
         }
